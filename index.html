@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Manager -Test-</title>
-    <!-- Dependencias -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-uhut8PejFZO8994oEgm/ZfAv0mW1/b83nczZzSwElbeILxwkN491YQXsCFTE6+nx" crossorigin="anonymous">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-uhut8PejFZO8994oEgm/ZfAv0mW1/b83nczZzSwElbeILxwkN491YQXsCFTE6+nx" crossorigin="anonymous">
+  <script src="app.js"></script>
+  <link href="eze.css" rel="stylesheet">
 
-    <script src="app.js"></script>
 
 </head>
+
 <body>
     <!-- NAVEGACION --> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <p class="navbar-brand">Data Manager -Test- // Operador</p>
             <ul class="navbar-nav ml-auto">
-                    <button type="button" class="delete-historial btn btn-danger">Reset Historial</button>
+                    <h3 class="navbar-brand"><b>Hola! Bienvenido TestUser99!</b></h3>
+                    <!-- 
+                        <button type="button" class="delete-historial btn btn-danger">Reset Historial</button> 
+                    -->
+                    <a href="https://crmdatos.badabin.net/wiki.html" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-info">WIKI/GUIA</button></a>
+                    <a href="https://github.com/SeelenMeister/DataManagerTest" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-warning">Ver Codigo en GitHub</button></a>
             </ul>
     </nav>
     <!-- ALERTA / NOTICIAS -->
@@ -35,9 +40,11 @@
                 <p>Se puede seleccionar el numero de telefono para modificarlo antes de copiarlo (no afecta al dato en la tabla original)</p>
             
                 
-            <a href="#" class="alert-link">Este recordatorio es personalizable desde el panel de "Supervisores"</a>.</p>
+            <a href="https://crmdatos.badabin.net/wiki.html" target="_blank" class="alert-link">En la WIKI hay Información mucho más detallada. Clickeame para visitarla!</a>.</p>
           </div>
     <!-- CONTENIDO -->
+    <div class="container p-1" id="alertas">         
+    </div>
     <div class="container p-4">
         <div class="row">
             <div class="col-md-6">  <!-- Row IZQUIERDA -->
@@ -53,41 +60,46 @@
                     <tbody id="dato"> <!-- Acá imprimimos el DATO -->                   
                     </tbody>
                 </table>
-                <center>
-                <button type="button" onclick="copiar('c2')" class="btn btn-outline-info btn-sm">Copiar Teléfono!</button>
-                </center>
-                <br>
                 <form id="tab-submit"> <!-- TABULACION -->  
                         <div class="form-group">
                                 <label for="exampleSelect1"><b>Selecciona una opción para este dato</b></label>
                                 <select class="form-control" id="select">
                                         <option value="No Contesta">No Contesta</option>
+                                        <option value=Programado>Programado</option>
                                         <option value="No tiene tarjeta">No tiene tarjeta</option>
                                         <option value="Le parece caro">Le parece caro</option>
                                         <option value="NO ABSOLUTO">NO ABSOLUTO</option>
                                         <option value="Numero erroneo">Numero erroneo</option>
-                                </select>                 
+                                </select>
+                                <div class="form-group p-2" id="tab-agenda">
+                                        <input id="date" type="date" class="form-control">
+                                </div>               
                         </div>
                         <div class="form-group">
-                            <textarea id="nota" cols="30" rows="5" class="form-control" placeholder="(Opcional)Puedes agregar una nota, datos de sondeo, etc..."></textarea>
+                            <textarea id="nota" cols="30" rows="2" class="form-control" placeholder="(Opcional)Puedes agregar una nota, datos de sondeo, etc..."></textarea>
                         </div>
                         <div id="hidden-label"></div> <!-- Acá almaceno el ID del Dato para insertar en "historial" -->
                         <button type="submit" class="btn btn-primary btn-block text-center">Enviar tabulacion y recibir un nuevo dato!</button>
                     </form>
+                    <h2 style="text-align: center;">HISTORIAL</h2>
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <td>Fecha</td>
+                                <td>Tabulación</td>
+                                <td>Notas</td>
+                            </tr>
+                        </thead>
+                        <tbody id="historial"> <!-- Acá imprimimos el HISTORIAL -->                        
+                        </tbody>
+                    </table>
             </div>
             <div class="col-md-6">  <!-- Row DERECHA -->
-                <h2 style="text-align: center;">HISTORIAL</h2>
-                <table class="table table-bordered table-sm">
-                    <thead>
-                        <tr>
-                            <td>Fecha</td>
-                            <td>Tabulación</td>
-                            <td>Notas</td>
-                        </tr>
-                    </thead>
-                    <tbody id="historial"> <!-- Acá imprimimos el HISTORIAL -->                        
-                    </tbody>
-                </table>
+                <div class="container" id="user-panel">
+                        <h4 class="text-center">Datos Agendados:</h4>
+                        <input type="hidden" name="userid" id="userid" value="99" />
+                </div>
+                <div class="container" id="meter-agenda"></div>
             </div>
         </div>
     </div>

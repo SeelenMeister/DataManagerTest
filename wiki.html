@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Manager -Test-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-uhut8PejFZO8994oEgm/ZfAv0mW1/b83nczZzSwElbeILxwkN491YQXsCFTE6+nx" crossorigin="anonymous">
+  <link href="wiki.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- NAVEGACION --> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <p class="navbar-brand">Data Manager -Test- // WIKI</p>
+            <ul class="navbar-nav ml-auto">
+                    <h3 class="navbar-brand"><b>Hola! Bienvenido a la Wiki!</b></h3>
+                    <a href="https://crmdatos.badabin.net/" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-info">Probar DataManager</button></a>
+                    <a href="https://github.com/SeelenMeister/DataManagerTest" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-warning">Ver Codigo en GitHub</button></a>
+            </ul>
+    </nav>
+<div class="sidenav">
+            <h3 class="text-center">Indice</h3>
+            <a href="#sql">Asignacion de Datos</a>
+            <a href="#tab">Tabulación</a>
+            <a href="#historial">Historial</a>
+            <a href="#tel">Telefonos mal escritos</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#fin">Para Finalizar</a>
+</div>
+<div class="container main">
+    <div class="container p-4" id="sql">
+        <h3>Asignación de Datos </h3>
+        <p>Los datos se asignan de manera aleatoria a todos los operadores. También se ordenan por un atributo 
+            "prioridad" el cual aumenta en +1 cada vez que un dato es traido/usado/etc; esto logra que los datos 
+            sean contactados de manera equitativa (evitando cosas como llamar 10 veces a un dato y solo 1 ves a 
+            otro dato distinto).</p>
+        <img src="img/sql.png">
+        <p>Por otro lado, el atributo "uso" determina si un dato puede ser traido o no. Un dato NO es traido si 
+            esta siendo usado por otro operador, si esta guardado en el panel de "agenda" de un operador o si fué 
+            catalogado como "numero incorrecto". El sistema NO elimina datos de la Database.
+        </p> 
+    </div>
+    <div class="container p-4" id="tab">
+        <h3>Tabulacion</h3>
+        <p>La Tabulacion es la clasificación del dato para su seguimiento estadístico. Opcionalmente se pueden 
+            agregar "Notas".
+        </p>
+        <img src="img/tab1.png">
+        <p>Las notas y tabulaciones son asignadas a cada dato de manera particular y visible a través de la seccion
+            "historial" que es traida junto a cada dato.
+        </p>
+        <img src="img/tab2.png">
+    </div>
+    <div class="container p-4" id="historial">
+        <h3>Historial</h3>
+        <p>El historial muestra las ultimas 10 interacciones y notas previas del dato. Su objetivo es brindar
+            información útil para encarar la venta correctamente incluso desde antes de discar.
+        </p>
+        <img src="img/historial.png">
+    </div>
+    <div class="container p-4" id="tel">
+        <h3>Telefonos mal escritos</h3>
+        <img src="img/corrijo1.png">
+        <p>A no preocuparse! el numero de telefono puede editarse y NO modifica la base de datos. Esto permite 
+            la posibilidad de correjir el numero antes de discarlo.
+        </p>
+        <img src="img/corrijo2.png">
+        <p><u>Nota:</u> Se puede usar el boton "Copiar" para copiar el Teléfono y no tener que discarlo!</p>
+    </div>
+    <div class="container p-4" id="agenda">
+        <h3>Agenda</h3>
+        <p>Cuando un operador necesita "guardar/reservarse" un dato para contactarlo luego, se usa la opcion
+            "Programado" de la tabulación y al seleccionarla se nos habilitará la posibilidad de elejir una fecha.
+        </p>
+        <p>Si el operador no selecciona ninguna fecha, el dato sera guardado con la fecha actual.</p>
+        <img src="img/agenda1.png">
+        <p>Posteriormente el operador dispondrá del dato y su información en el panel derecho, desde el cual 
+            podrá consultar sus datos, notas, fechas de agenda, etc.
+        </p>
+        <img src="img/agenda2.png">
+        <p>Usar la opcion "Retabular" quitará el dato del Panel del usuario y puede tocarle ese dato a otro operador</p>
+    </div>
+    <div class="container p-4" id="fin">
+        <h3>Para finalizar</h3>
+        <p>Tener en cuenta que esta es una version de prueba.</p>
+        <p>La versión final de este software dispone de un Login para usuarios, panel de supervisores y protección SQL.</p>
+        <p>Visiten mi página web para estar al tanto de mis nuevos proyectos: <a href="https://badabin.net/" target="_blank" rel="noopener noreferrer">https://badabin.net/</a></p>
+    </div>
+    <div class="container p-4"></div>
+    <div class="container p-4"></div>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-    $dbName = "db_name";
+    $dbName = "db_vidaplena";
 
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
